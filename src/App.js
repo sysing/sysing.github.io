@@ -14,16 +14,11 @@ class App extends Component {
           <Router>
             <div>
             <header className="App-header">
-            <Link to="/profile"><img src={profile} align="left" className="App-profile" alt="profile" /></Link>
-            <Link to="/android"><img src={android} className="App-logo" alt="android" /></Link>
-            <Link to="/python"><img src={python} className="App-logo" alt="python" /></Link>
-            <Link to="/python"><img src={react} className="App-logo" alt="react" /></Link>
+              <div class="col-sm-1"><Link to="/profile"><img src={profile} align="left" className="App-profile" alt="profile" /></Link></div>
+              <div class="col-sm-1"><Link to="/android"><img src={android} align="left" className="App-logo" alt="android" /></Link></div>
+              <div class="col-sm-1"><Link to="/python"><img src={python} align="left" className="App-logo" alt="python" /></Link></div>
+              <div class="col-sm-1"><Link to="/python"><img src={react} align="left" className="App-logo" alt="react" /></Link></div>
             </header>
-            <Route exact path="/" component={Home} />
-            <Route path="/android" component={Android} />
-            <Route path="/profile" component={Profile} />
-            <Route path="/python" component={Python} />
-            <Route path="/topics" component={Topics} />
             </div>
           </Router>
       
