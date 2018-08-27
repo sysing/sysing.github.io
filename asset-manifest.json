@@ -1,10 +1,12 @@
 {
-  "main.css": "static/css/main.8343429b.css",
-  "main.css.map": "static/css/main.8343429b.css.map",
-  "main.js": "static/js/main.6e85eeb1.js",
-  "main.js.map": "static/js/main.6e85eeb1.js.map",
+  "main.css": "static/css/main.228ed645.css",
+  "main.css.map": "static/css/main.228ed645.css.map",
+  "main.js": "static/js/main.72479d57.js",
+  "main.js.map": "static/js/main.72479d57.js.map",
   "static\\media\\android.png": "static/media/android.5a96130b.png",
+  "static\\media\\ntu.png": "static/media/ntu.26bb6b49.png",
   "static\\media\\profile_square.jpg": "static/media/profile_square.57ed936b.jpg",
   "static\\media\\python.png": "static/media/python.ca2ceddc.png",
-  "static\\media\\react.svg": "static/media/react.ee7cd8ed.svg"
+  "static\\media\\react.svg": "static/media/react.ee7cd8ed.svg",
+  "static\\media\\thu.png": "static/media/thu.6444bb51.png"
 }
