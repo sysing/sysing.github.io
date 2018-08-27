@@ -1,3 +1,11 @@
+.NavBar{
+  margin: 20px 0 0 0;
+  display:block ; 
+  background-color:yellow;
+  height:100px;
+  justify-items: center;
+  align-items: center;
+}
 .Link {
   margin-left:20px;
   display:inline-block;
@@ -19,25 +27,54 @@
   margin:0 auto 0 auto;
 }
 
+.WorkPic {
+  height:100px;
+  padding:10px;
+  width:auto;
+}
+.WorkHeader {
+  height:auto;
+  padding:10px;
+  width:auto;
+}
+.WorkRow{
+  height:auto;
+  background-color:greenyellow;
+}
+.WorkDesc{
+  text-align:left;
+  justify-items: left;
+  margin-left: 120px;
+}
+
 .EducationPic {
   border-radius: 100%;
   height:100px;
   width:auto;
+}
+.EducationRow{
+  height:150px;
+  background-color:greenyellow;
 }
 .EducationDesc{
   text-align:left;
   justify-items: left;
   margin-left: 120px;
 }
-.EducationRow{
+
+.ProjectPic {
   height:100px;
-  margin:50px 20px 0 0;
+  width:auto;
 }
-.NavBar{
-  margin: 20px;
-  display:block ; 
-  background-color:yellow;
+.ProjectHeader{
   height:100px;
-  justify-items: center;
-  align-items: center;
+}
+.ProjectRow{
+  height:auto;
+  background-color:greenyellow;
+}
+.ProjectDesc{
+  text-align:left;
+  justify-items: left;
+  margin-left: 120px; 
 }

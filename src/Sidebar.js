@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import './Sidebar.css';
+
 import profile from './images/profile_square.jpg';
 import ntu from './images/ntu.png';
 import thu from './images/thu.png';
-import './Sidebar.css';
-
+import jump from './images/jump.png';
+import start from './images/start.jpg';
+import start_pdf from './images/start_pdf.pdf';
+import matrix from './images/matrix.png';
 
 class Sidebar extends Component {
   render() {
@@ -45,7 +49,52 @@ const routes = [
   },
   {
     path: "/work",
-    main: () => <h2>Work</h2>
+    main: () =>
+      <div>
+        <div className="WorkRow">
+          <div className="WorkHeader">
+            <img src={matrix} align="left" className="WorkPic" alt="" />
+            <h4 style={{ fontWeight: 'bold' }}>Singapore Valley Awards, Matrix Partners China </h4>
+            <span>Python, Javascript, HTML, CSS</span><br />
+            <span>June 2018 - August 2018</span><br />
+          </div>
+          <br />
+            <span>Projects:</span><br />
+            <ul>
+            <li> Django | Bootstrap Web Application for Human Resource Headhunters Candidate Listing</li>
+              <a href= 'https://tranquil-retreat-52501.herokuapp.com/'></a>
+            <li>Flask | Ajax, JQuery, DataTable Web Application for crawled startup investment project</li>
+            </ul>
+        </div>
+          <div className="WorkRow">
+            <div className="WorkHeader">
+              <img src={start} align="left" className="WorkPic" alt="" />
+              <div className="WorkDesc">
+              <h4 style={{ fontWeight: 'bold' }}>Backend Developer, Start@Beijing (formerly PP租车)</h4>
+                <span>PHP, MySQL</span><br/>
+                <span>August 2016 - July 2017</span><br />
+                <span>Internship under NTUitive's Overseas Entrepreneurship Programme</span><br />
+              </div>
+            </div>
+            <br />
+              <span>Projects:</span><br />
+              <ul>
+              <li> JSON API for promoted car models, allowing product managers to publish promotions using a XML document without dev</li>
+              <li> Subscription feature that notifies users when their favorite car models becomes available in their area</li>
+              <li> Optimized UI for backend staff portal, implementing search bar with click criteria and hiding redundant information</li>
+              <li> SMS notification for urgent matter and daily Wechat notification for pending activities for the sale managers</li>
+              <li> Voucher management system for automated CronTab voucher generation and distribution, with weekly automatically generated report for voucher redemption stats</li>
+              <li> Conducted A/B testing of new app features via UUID sampling</li>
+              </ul>
+              <p style={{ fontWeight: 'bold' }}>Featured on School of Computer Science and Engineering's annual brochure:</p>
+              <object width="100%" height="400" data={start_pdf}  type="application/pdf" >
+                <p>
+                  It appears you don't have a PDF plugin for this browser.You can <a href={start_pdf}>click here to
+                  download the PDF file.</a>
+                </p>
+              </object>
+            </div>
+        </div>
   },
   {
     path: "/education",
@@ -71,7 +120,31 @@ const routes = [
   },
   {
     path: "/projects",
-    main: () => <h2>projects</h2>
+    main: () =>
+      <div>
+        <div className="ProjectRow">
+          <img style={{ 'display': 'block' }} src={jump} align="left" className="ProjectPic" alt="Jump" />
+            <div className="ProjectHeader">
+              <h4>Jump</h4>
+              <p>Android application for F&B pre-ordering and personalisation</p>
+            </div>
+            <div style={{alignContent:'left', margin:'10px'}}>
+            <p>Features:</p>
+            <ul>
+              <li>Pre-orders based on expected arrival time</li>
+              <li>Real-time order management system</li>
+              <li>Promotions publication and notification</li>
+              <li>Waiting time estimations using previous order fulfilment time with weights decaying logarithmically with time</li>
+              <li>Wilson score rating based loosely on Reddit's comment ranking algorithm to approximate a restaurant's adjusted rating</li>
+              <li>Diet recommendation based on user's biological profile (sex, age, height, weight, etc.)</li>
+            </ul>
+          <p>Demo:<br/></p>
+          </div>
+          <div style={{ clear: 'both', display:'flex', backgroundColor:'yellow', justifyContent:'center'}}>
+            <iframe allowfullscreen="allowfullscreen" src="https://www.youtube.com/embed/8-KQaWEivTs" frameborder="0" allow="autoplay; encrypted-media"></iframe>
+          </div>
+        </div>
+      </div>
   }
 ];
 export default Sidebar;
