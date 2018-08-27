@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import './Sidebar.css';
+import './SocialFooter.css';
 
 import profile from './images/profile_square.jpg';
 import ntu from './images/ntu.png';
@@ -16,14 +17,16 @@ class Sidebar extends Component {
       <Router>
         <div>
           <div className="NavBar">
-            <Link to="/profile"><img style={{ display: 'block' }} src={profile} align="left" className="ProfilePic" alt="profile" /></Link>  
+            <Link to="/"><img style={{ display: 'block' }} src={profile} align="left" className="ProfilePic" alt="profile" /></Link>  
               <div className='TopLinks'>
+                <div className='Link'><Link to="/">About</Link></div>
                 <div className='Link'><Link to="/work">Work</Link></div>
                 <div className='Link'><Link to="/education">Education</Link></div>
-                <div className='Link'><Link to="/Projects">Projects</Link></div>
+                <div className='Link'><Link to="/projects">Projects</Link></div>
+                <div className='Link'><Link to="/quotes">Quotes</Link></div>
               </div>
           </div>
-
+          <hr></hr>
           <div style={{ flex: 1, padding: "10px", marginTop:'auto'}}>
             {routes.map((route, index) => (
               // Render more <Route>s with the same paths as
@@ -36,6 +39,7 @@ class Sidebar extends Component {
               />
             ))}
           </div>
+          
         </div>
       </Router>
     );
@@ -45,7 +49,19 @@ const routes = [
   {
     path: "/",
     exact: true,
-    main: () => <h2>Home</h2>
+    main: () =>
+      <div>
+        <p>Hi, I am Swee Yang. Welcome to my one-page website. Check out the source code <a href='https://github.com/sysing/sysing.github.io/tree/source'>here</a>.</p>
+
+        <div class="text-center center-block">
+          <a href="https://www.facebook.com/bootsnipp"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
+          <a href="https://twitter.com/bootsnipp"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
+          <a href="https://plus.google.com/+Bootsnipp-page"><i id="social-gp" class="fa fa-google-plus-square fa-3x social"></i></a>
+          <a href="mailto:#"><i id="social-em" class="fa fa-envelope-square fa-3x social"></i></a>
+        </div>
+      </div>
+
+
   },
   {
     path: "/work",
@@ -61,11 +77,11 @@ const routes = [
           <br />
             <span>Projects:</span><br />
             <ul>
-            <li> Django | Bootstrap Web Application for Human Resource Headhunters Candidate Listing</li>
-              <a href= 'https://tranquil-retreat-52501.herokuapp.com/'></a>
-            <li>Flask | Ajax, JQuery, DataTable Web Application for crawled startup investment project</li>
+            <li> <a href='https://tranquil-retreat-52501.herokuapp.com/'>Headhunter candidate listing web app with search,filter using Django / Bootstrap </a></li>
+            <li> Crawled investment data listing web app with Flask / Ajax, JQuery, DataTable  </li>
             </ul>
         </div>
+        <hr></hr>
           <div className="WorkRow">
             <div className="WorkHeader">
               <img src={start} align="left" className="WorkPic" alt="" />
@@ -87,7 +103,7 @@ const routes = [
               <li> Conducted A/B testing of new app features via UUID sampling</li>
               </ul>
               <p style={{ fontWeight: 'bold' }}>Featured on School of Computer Science and Engineering's annual brochure:</p>
-              <object width="100%" height="400" data={start_pdf}  type="application/pdf" >
+              <object width="600px" height="600px" data={start_pdf}  type="application/pdf" >
                 <p>
                   It appears you don't have a PDF plugin for this browser.You can <a href={start_pdf}>click here to
                   download the PDF file.</a>
@@ -108,6 +124,7 @@ const routes = [
                   <p>August 2014 - July 2018</p>
               </div>
             </div>
+        <hr></hr>
             <div className="EducationRow">
               <img style={{ 'display': 'block' }} src={thu} align="left" className="EducationPic" alt="thu" />
               <div className="EducationDesc">
@@ -140,11 +157,26 @@ const routes = [
             </ul>
           <p>Demo:<br/></p>
           </div>
-          <div style={{ clear: 'both', display:'flex', backgroundColor:'yellow', justifyContent:'center'}}>
-            <iframe allowfullscreen="allowfullscreen" src="https://www.youtube.com/embed/8-KQaWEivTs" frameborder="0" allow="autoplay; encrypted-media"></iframe>
+          <div style={{ clear: 'both', display:'flex', justifyContent:'left'}}>
+            <iframe title="jumpDemo" allowFullScreen="allowFullScreen" src="https://www.youtube.com/embed/8-KQaWEivTs" frameBorder="1px" allow="autoplay; encrypted-media"></iframe>
           </div>
         </div>
+
       </div>
+  },
+  {
+  path: "/quotes",
+  main: () =>
+    <div>
+      <a href='http://blogoscoped.com/archive/2005-08-24-n14.html'>Lazy</a> programmers reuse quotes to reflect their design philosophy
+      <div className="Blockquote">
+        <p>"Simple is better than complex."<br /> - Peter Tims, The Zen Of Python</p>
+      </div>
+      <div className="Blockquote">
+        <p>"The cheapest, fastest and most reliable components of a computer system are those that aren't there."<br /> - Gordon Bell</p>
+      </div>
+    </div>
   }
 ];
+
 export default Sidebar;

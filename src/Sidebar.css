@@ -1,7 +1,7 @@
 .NavBar{
   margin: 20px 0 0 0;
   display:block ; 
-  background-color:yellow;
+  /* background-color:yellow; */
   height:100px;
   justify-items: center;
   align-items: center;
@@ -39,7 +39,7 @@
 }
 .WorkRow{
   height:auto;
-  background-color:greenyellow;
+  /* background-color:greenyellow; */
 }
 .WorkDesc{
   text-align:left;
@@ -54,7 +54,7 @@
 }
 .EducationRow{
   height:150px;
-  background-color:greenyellow;
+  /* background-color:greenyellow; */
 }
 .EducationDesc{
   text-align:left;
@@ -71,10 +71,27 @@
 }
 .ProjectRow{
   height:auto;
-  background-color:greenyellow;
+  /* background-color:greenyellow; */
 }
 .ProjectDesc{
   text-align:left;
   justify-items: left;
   margin-left: 120px; 
+}
+
+hr { 
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+}
+
+.Blockquote {
+  background: lightcyan ;
+  border-left: 10px solid #ccc;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
 }
