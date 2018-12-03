@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Sidebar from './Sidebar';
+import Main from './Main';
 import registerServiceWorker from './registerServiceWorker';
 
 // ReactDOM.render(<App />, document.getElementById('root'));
-ReactDOM.render(<Sidebar />, document.getElementById('sidebar'));
+ReactDOM.render(<Main />, document.getElementById('sidebar'));
 registerServiceWorker();

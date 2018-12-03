@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import './Sidebar.css';
+import './Main.css';
 import './SocialFooter.css';
 
 import profile from './images/profile_square.jpg';
@@ -17,16 +17,17 @@ class Sidebar extends Component {
       <Router>
         <div>
           <div className="NavBar">
-            <Link to="/"><img style={{ display: 'block' }} src={profile} align="left" className="ProfilePic" alt="profile" /></Link>  
-              <div className='TopLinks'>
+            <div className='TopLinks'>
+              <Link to="/">
+                <img src={profile} className="ProfilePic" alt="profile" /><br/>
+              </Link>
                 <div className='Link'><Link to="/">About</Link></div>
                 <div className='Link'><Link to="/work">Work</Link></div>
                 <div className='Link'><Link to="/education">Education</Link></div>
                 <div className='Link'><Link to="/projects">Projects</Link></div>
-                <div className='Link'><Link to="/quotes">Quotes</Link></div>
               </div>
           </div>
-          <hr></hr>
+          <hr/>
           <div style={{ flex: 1, padding: "10px", marginTop:'auto'}}>
             {routes.map((route, index) => (
               // Render more <Route>s with the same paths as
@@ -53,12 +54,12 @@ const routes = [
       <div>
         <p>Hi, I am Swee Yang. Welcome to my one-page website. Check out the source code <a href='https://github.com/sysing/sysing.github.io/tree/source'>here</a>.</p>
 
-        <div class="text-center center-block">
+        {/* <div class="text-center center-block">
           <a href="https://www.facebook.com/bootsnipp"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
           <a href="https://twitter.com/bootsnipp"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
           <a href="https://plus.google.com/+Bootsnipp-page"><i id="social-gp" class="fa fa-google-plus-square fa-3x social"></i></a>
           <a href="mailto:#"><i id="social-em" class="fa fa-envelope-square fa-3x social"></i></a>
-        </div>
+        </div> */}
       </div>
 
 
@@ -70,16 +71,22 @@ const routes = [
         <div className="WorkRow">
           <div className="WorkHeader">
             <img src={matrix} align="left" className="WorkPic" alt="" />
-            <h4 style={{ fontWeight: 'bold' }}>Singapore Valley Awards, Matrix Partners China </h4>
+            <div className='WorkSub'>
+            <h4 style={{ fontWeight: 'bold' }}>Singapore Valley Award Recipient, Matrix Partners China </h4>
             <span>Python, Javascript, HTML, CSS</span><br />
             <span>June 2018 - August 2018</span><br />
+            </div>
           </div>
           <br />
-            <span>Projects:</span><br />
+          <div className='WorkDesc'>
+            SVA is an entrepreneurship competition which offers young talents the rare opportunity to intern with China’s top technology firms. It saw 79 applicants from all six of Singapore’s autonomous universities participating in two days of rigorous pitch sessions. For this competition, I pitched a food & beverage pre-order mobile app which I later developed for the Android Platform. Featured on <a href='https://www.straitstimes.com/business/new-scheme-launched-for-undergrads-to-intern-at-chinas-internet-giants'>Straits Times</a> and <a href='hhttps://www.zaobao.com.sg/news/singapore/story20180324-845226'>Zao Bao</a>.
+          </div>
+          <div className='WorkProject'>
             <ul>
             <li> <a href='https://tranquil-retreat-52501.herokuapp.com/'>Headhunter candidate listing web app with search,filter using Django / Bootstrap </a></li>
             <li> Crawled investment data listing web app with Flask / Ajax, JQuery, DataTable  </li>
             </ul>
+          </div>
         </div>
         <hr></hr>
           <div className="WorkRow">
@@ -87,21 +94,31 @@ const routes = [
               <img src={start} align="left" className="WorkPic" alt="" />
               <div className="WorkDesc">
               <h4 style={{ fontWeight: 'bold' }}>Backend Developer, Start@Beijing (formerly PP租车)</h4>
-                <span>PHP, MySQL</span><br/>
+              <div className='WorkSub'>
+                <span>PHP, MySQL</span><br />
                 <span>August 2016 - July 2017</span><br />
                 <span>Internship under NTUitive's Overseas Entrepreneurship Programme</span><br />
               </div>
+              </div>
             </div>
-            <br />
-              <span>Projects:</span><br />
-              <ul>
-              <li> JSON API for promoted car models, allowing product managers to publish promotions using a XML document without dev</li>
-              <li> Subscription feature that notifies users when their favorite car models becomes available in their area</li>
-              <li> Optimized UI for backend staff portal, implementing search bar with click criteria and hiding redundant information</li>
-              <li> SMS notification for urgent matter and daily Wechat notification for pending activities for the sale managers</li>
-              <li> Voucher management system for automated CronTab voucher generation and distribution, with weekly automatically generated report for voucher redemption stats</li>
-              <li> Conducted A/B testing of new app features via UUID sampling</li>
-              </ul>
+          <div className='WorkDesc'>
+           Under NTUitive's Overseas Entrepreneurship Programme, I interned at PPZuChe, a car sharing startup for 10 months as the only foreigner out of 100+ employees. At PPZuChe, I was a PHP backend dev in a Mandarin speaking work environment.
+          </div>
+          <div className='WorkProject'>
+          <ul>
+            <li> Xpages API for Product Managers to edit promoted cars</li>
+            <li> SMS reminders for sales managers to follow up on order form changes promptly</li>
+            <li> Subscription feature that allows users to be notified when their subscribed car model becomes available</li>
+            <li> Redesign of order form CRUD access for cross region sales manager</li>
+            <li> Simplified the user feedback survey from a open-ended format to a multi-layered response </li>
+            <li> Crontab generation of monthly coupon codes and distribution via email, reporting of redemption stats</li>
+            <li> 3 layered commonly asked questions web page for customers service reps to easily search for information when responding to query</li>
+            <li> Standardisation for internal url links according SEO's vendor requirement</li>
+            <li> Auto generation of XML document for Baidu's quick search tool</li>
+            <li> A/B testing assignment via UUID hash for trial features </li>
+          </ul>
+          </div>
+          <br/>
               <p style={{ fontWeight: 'bold' }}>Featured on School of Computer Science and Engineering's annual brochure:</p>
               <object width="600px" height="600px" data={start_pdf}  type="application/pdf" >
                 <p>
@@ -139,30 +156,35 @@ const routes = [
     path: "/projects",
     main: () =>
       <div>
-        <div className="ProjectRow">
-          <img style={{ 'display': 'block' }} src={jump} align="left" className="ProjectPic" alt="Jump" />
-            <div className="ProjectHeader">
-              <h4>Jump</h4>
-              <p>Android application for F&B pre-ordering and personalisation</p>
+      <div className="WorkRow">
+        <div className="WorkHeader">
+          <img src={jump} align="left" className="WorkPic" alt="" />
+          <div className="WorkDesc">
+            <h4 style={{ fontWeight: 'bold' }}>Jump</h4>
+            <div className='WorkSub'>
+              <span>Android application for F&B pre-ordering and personalisation</span><br />
             </div>
-            <div style={{alignContent:'left', margin:'10px'}}>
-            <p>Features:</p>
-            <ul>
-              <li>Pre-orders based on expected arrival time</li>
-              <li>Real-time order management system</li>
-              <li>Promotions publication and notification</li>
-              <li>Waiting time estimations using previous order fulfilment time with weights decaying logarithmically with time</li>
-              <li>Wilson score rating based loosely on Reddit's comment ranking algorithm to approximate a restaurant's adjusted rating</li>
-              <li>Diet recommendation based on user's biological profile (sex, age, height, weight, etc.)</li>
-            </ul>
-          <p>Demo:<br/></p>
-          </div>
-          <div style={{ clear: 'both', display:'flex', justifyContent:'left'}}>
-            <iframe title="jumpDemo" allowFullScreen="allowFullScreen" src="https://www.youtube.com/embed/8-KQaWEivTs" frameBorder="1px" allow="autoplay; encrypted-media"></iframe>
           </div>
         </div>
-
-      </div>
+        <div className='WorkDesc'>
+          Winning product pitch for Singapore Valley Awards
+          </div>
+        <div className='WorkProject'>
+          <ul>
+            <li>Pre-orders based on expected arrival time</li>
+            <li>Real-time order management system with instant notifications of status updates</li>
+            <li>Promotion publication via distributed notification</li>
+            <li>Waiting time estimation calculated via previous fulfilment times of decaying weights</li>
+            <li>Wilson score rating based loosely on Reddit's comment ranking algorithm to approximate a restaurant's adjusted rating</li>
+            <li>Diet recommendation based on user's biological profile (sex, age, height, weight, etc.)</li>
+          </ul>
+        </div>
+        <br />
+          </div>
+          <div style={{ clear: 'both', display:'flex', justifyContent:'center'}}>
+          <iframe title="jumpDemo" allowFullScreen="allowFullScreen" src="https://www.youtube.com/embed/8-KQaWEivTs" frameBorder="1px" allow="autoplay; encrypted-media" height='300' width='auto' ></iframe>
+          </div>
+        </div>
   },
   {
   path: "/quotes",
@@ -170,7 +192,7 @@ const routes = [
     <div>
       <a href='http://blogoscoped.com/archive/2005-08-24-n14.html'>Lazy</a> programmers reuse quotes to reflect their design philosophy
       <div className="Blockquote">
-        <p>"Simple is better than complex."<br /> - Peter Tims, The Zen Of Python</p>
+        <p>"Simple is better than complex."<br /> - Tim Peters, The Zen Of Python</p>
       </div>
       <div className="Blockquote">
         <p>"The cheapest, fastest and most reliable components of a computer system are those that aren't there."<br /> - Gordon Bell</p>
