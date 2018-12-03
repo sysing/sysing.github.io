@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import './Main.css';
-import './SocialFooter.css';
+import './sidebar.css';
 
 import profile from './images/profile_square.jpg';
 import ntu from './images/ntu.png';
@@ -53,13 +52,6 @@ const routes = [
     main: () =>
       <div>
         <p>Hi, I am Swee Yang. Welcome to my one-page website. Check out the source code <a href='https://github.com/sysing/sysing.github.io/tree/source'>here</a>.</p>
-
-        {/* <div class="text-center center-block">
-          <a href="https://www.facebook.com/bootsnipp"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
-          <a href="https://twitter.com/bootsnipp"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
-          <a href="https://plus.google.com/+Bootsnipp-page"><i id="social-gp" class="fa fa-google-plus-square fa-3x social"></i></a>
-          <a href="mailto:#"><i id="social-em" class="fa fa-envelope-square fa-3x social"></i></a>
-        </div> */}
       </div>
 
 
